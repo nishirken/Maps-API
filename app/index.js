@@ -3,13 +3,12 @@ const Router = require('koa-router');
 const mongoose = require('mongoose');
 const cors = require('kcors');
 const bodyParser = require('koa-bodyparser');
-const { resolve } = require('path');
 const routes = require('./routes');
 
 const app = new Koa();
 const router = new Router();
 
-mongoose.connect('mongodb://mongo:27017/users');
+mongoose.connect('mongodb://mongo:27017/maps');
 mongoose.connection.on('error', console.error);
 
 app
@@ -20,5 +19,6 @@ app
 
 router.get('/', routes.home);
 router.post('/save-state', routes.saveState);
+router.post('/get-state', routes.getState);
 
 app.listen(3000);

@@ -66,7 +66,7 @@
       "property"
     ],
     "dot-notation": [
-      "error",
+      "off",
       {
         "allowKeywords": false
       }
@@ -125,7 +125,7 @@
       "error",
       "as-needed"
     ],
-    "require-await": "warn",
+    "require-await": "off",
     "vars-on-top": "error",
     "wrap-iife": "error",
     "yoda": "error",

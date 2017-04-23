@@ -1,7 +1,7 @@
 version: '3'
 services:
   mongo:
-    container_name: maps_mongo
+    container_name: maps_api_mongo
     image: mongo:3.4.2
     ports:
       - 27017:27017
@@ -10,12 +10,13 @@ services:
       MONGODB_PASSWORD: 12345
 
   node:
-    container_name: maps_node
+    container_name: maps_api_node
     image: node:7.7.4
     stdin_open: true
     tty: true
     volumes:
-      - ../app:/var/www
+      - ../pm2.config.yml:/pm2.config.yml
+      - ../app:/app
       - ../node_modules:/node_modules
       - ../package.json:/package.json
       - ../yarn.lock:/yarn.lock
@@ -23,10 +24,10 @@ services:
       - mongo
 
   nginx:
-    container_name: maps_nginx
+    container_name: maps_api_nginx
     image: nginx:1.11
     ports:
-      - 80:80
+      - 8080:80
     volumes:
       - ../:/var/www
       - ./nginx:/etc/nginx
