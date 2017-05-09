@@ -1,2 +1,3 @@
 /.idea
 /docker/logs
+/node_modules
