@@ -1,1 +1,1 @@
-exports.markerModelController = require('./marker-model-controller');
+exports.markerController = require('./marker');

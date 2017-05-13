@@ -1,4 +1,4 @@
-const { Marker } = require('../schemas');
+const { getCollection } = require('../models');
 
 /**
  * Route function for getting client preloaded state
@@ -6,11 +6,7 @@ const { Marker } = require('../schemas');
  * @return {undefined}
  */
 module.exports = async ctx => {
-  const markers = await Marker.find({}, {
-    _id: 0,
-    __v: 0,
-    'objects._id': 0,
-  });
+  const markers = await getCollection();
 
   ctx.body = JSON.stringify(markers);
 };
