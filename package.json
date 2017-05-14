@@ -8,6 +8,7 @@
   "scripts": {
     "start": "nodemon app/index.js -L --watch app",
     "test": "jest --watch --config jest.config.json",
+    "test:prod": "jest --config jest.config.json --runInBand",
     "prod": "pm2 start pm2.config.yml"
   },
   "dependencies": {
