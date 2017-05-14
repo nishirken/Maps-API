@@ -55,7 +55,7 @@
         "preferType": {
           "Boolean": "boolean",
           "Number": "number",
-          "object": "Object",
+          "object": "object",
           "String": "string"
         },
         "requireReturnType": false,
