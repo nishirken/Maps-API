@@ -2,8 +2,7 @@ const { getCollection } = require('../models');
 
 /**
  * Route function for getting client preloaded state
- * @param ctx {object} Koa object
- * @return {undefined}
+ * @param {object} ctx - Koa object
  */
 module.exports = async ctx => {
   const markers = await getCollection();
