@@ -2,8 +2,7 @@ const { markerController } = require('../controllers');
 
 /**
  * Route function for handle request for save client application state
- * @param ctx {object} Koa object
- * @returns undefined
+ * @param {object} ctx - Koa object
  */
 module.exports = async ctx => {
   const body = ctx.request.body;
