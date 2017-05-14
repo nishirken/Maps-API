@@ -1,4 +1,4 @@
 {
-  "automock": false
+  "testMatch": ["<rootDir>/__tests__/**/*.test.js"],
+  "setUpFiles": ["<rootDir>/jest.setup.js"]
 }
-

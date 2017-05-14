@@ -21,6 +21,8 @@ services:
       - ../package.json:/package.json
       - ../yarn.lock:/yarn.lock
       - ../__tests__:/__tests__
+      - ../jest.config.json:/jest.config.json
+      - ../jest.setup.js:/jest.setup.js
 
   nginx:
     container_name: maps_api_nginx

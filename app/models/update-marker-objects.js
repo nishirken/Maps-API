@@ -13,6 +13,5 @@ module.exports = async payload => {
         },
       },
     },
-    { new: true }
   );
 };

@@ -5,7 +5,6 @@ module.exports = async payload => {
     { index: payload.index },
     { coords: payload.coords },
     {
-      new: true,
       upsert: true,
     }
   );
