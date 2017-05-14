@@ -4,6 +4,7 @@ const { mockgoose, mongoose, beforeSetup, afterSetup } = require('../db-setup');
 
 beforeAll(() => beforeSetup(mockgoose, mongoose));
 afterEach(() => afterSetup());
+afterAll(() => mongoose.connection.close());
 
 describe('Update marker name model', () => {
   const initialState = {

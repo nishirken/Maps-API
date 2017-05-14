@@ -15,6 +15,7 @@ const markerSchema = new mongoose.Schema({
     {
       index: Number,
       name: String,
+      _id: false,
     },
   ],
 });
