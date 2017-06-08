@@ -1,0 +1,28 @@
+version: '2'
+services:
+  mongo:
+    container_name: maps_api_mongo
+    image: mongo:3.4.2
+    cpu_shares: 100
+    mem_limit: 262144000
+    environment:
+      MONGODB_USERNAME: mongo_user
+      MONGODB_PASSWORD: 12345
+
+  node:
+    container_name: maps_api_node
+    image: node:7.10.0
+    cpu_shares: 100
+    mem_limit: 160000000
+    stdin_open: true
+    tty: true
+
+  nginx:
+    container_name: maps_api_nginx
+    image: nginx:1.11
+    cpu_shares: 100
+    mem_limit: 50000000
+    ports:
+      - 8080:80
+    depends_on:
+      - node
